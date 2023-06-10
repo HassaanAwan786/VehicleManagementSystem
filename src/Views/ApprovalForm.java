@@ -82,7 +82,7 @@ public class ApprovalForm extends javax.swing.JFrame {
 
         currentStatus.setText("0");
 
-        deleteRole.setText("Regect");
+        deleteRole.setText("Reject");
         deleteRole.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteRoleActionPerformed(evt);
@@ -233,15 +233,14 @@ public class ApprovalForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // a function to set field values on press of specific buttons 
     void setFieldsFromListAt(int index){
-        if(personController.searchPerson(index, this)!=null){
-            Person nPassenger = new Person();
-            nPassenger = personController.searchPerson(index,this);
+        if(personController.searchPerson(index)!=null){
+            Person nPassenger = personController.searchPerson(index);
             idField.setText(nPassenger.getUserName()+"");
             nameField.setText(nPassenger.getName());
         }
         else {
             currentPosition =0;
-            setFieldsFromListAt(0);
+//            setFieldsFromListAt(0);
         }
     }
     void resetFields(){
@@ -287,8 +286,7 @@ public class ApprovalForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         // check if the id or name fields are not empty
         if(!"".equals(idField.getText()) && !"".equals(nameField.getText())){
-            Person nPassenger = new Person();
-            nPassenger = personController.searchPerson(currentPosition,this);
+            Person nPassenger = personController.searchPerson(currentPosition);
             nPassenger.setRole(roleSet.getSelectedItem().toString());
             if(personController ==null) personController = new Person_Controller();
             personController.approvePerson(nPassenger);

@@ -5,39 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e03e9852-2ecc-475c-ac83-83322709ecc3" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcalendar_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_33.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/ApprovalHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RecordHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RegistrationHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Handlers/RoleRecordHandlers/RoleHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structure/Interface/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structure/Interface/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Structure/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vehicle Management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vehicle Management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccessRights.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/AccessRights.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdminDashboard.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApprovalForm.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ApprovalForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ApprovalForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginForm.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Person_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterForm.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegisterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RegisterForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reservation_form.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Reservation_form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Reservation_form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RoleDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/RoleRecordHandlers/RoleDataHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RoleManagementForm.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RoleManagementForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoleManagementForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/ApprovalHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/ApprovalHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handlers/RoleRecordHandlers/RoleDataHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handlers/RoleRecordHandlers/RoleHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/RoleRecordHandlers/RoleHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Person_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Person_Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structure/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ApprovalForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ApprovalForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/RoleManagementForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RoleManagementForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686249635706</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial commit">
+      <created>1686404733481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686404733481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

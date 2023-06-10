@@ -12,6 +12,12 @@ public class Role {
 	private String name;
 	private AccessRights rights;
 
+    public Role(int id, String name, AccessRights rights) {
+        this.id = id;
+        this.name = name;
+        this.rights = rights;
+    }
+
     public int getId() {
         return id;
     }

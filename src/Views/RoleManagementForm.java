@@ -303,9 +303,9 @@ public class RoleManagementForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // a function to set field values on press of specific buttons 
     void setFieldsFromListAt(int index){
-        if(controller.searchRole(index, this)!=null){
-            Role nRole = new Role();
-            nRole = controller.searchRole(index,this);
+        if(controller.searchRole(index)!=null){
+            Role nRole;
+            nRole = controller.searchRole(index);
             idField.setText(nRole.getId()+"");
             nameField.setText(nRole.getName());
             AccessRights rights = nRole.getRights();
@@ -329,7 +329,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
     }
     private void newRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newRoleActionPerformed
         // TODO add your handling code here:
-        autoID = controller.getSize(this);
+        autoID = controller.getSize();
         state = STATE.NEW;
         idField.setText(autoID+"");
         resetFields();
@@ -341,7 +341,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
         resetFields();
         currentStatus.setText("0");
         currentPosition =0;
-        if(controller.getSize(this)!=0){
+        if(controller.getSize()!=0){
             setFieldsFromListAt(currentPosition);
         }
     }//GEN-LAST:event_editRoleActionPerformed
@@ -352,7 +352,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
         resetFields();
         currentStatus.setText("0");
         currentPosition =0;
-        if(controller!=null && controller.getSize(this)!=0){
+        if(controller!=null && controller.getSize()!=0){
             setFieldsFromListAt(currentPosition);
         }
     }//GEN-LAST:event_deleteRoleActionPerformed
@@ -369,7 +369,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveSuccess.setText("");
         if(controller!=null){
-            int position = controller.searchRole(nameField.getText(),this);
+            int position = controller.searchRole(nameField.getText());
             if(position!=-1){
                 currentPosition = position;
                 setFieldsFromListAt(currentPosition);
@@ -391,7 +391,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
             
             //save data and check if it is successfully saved or not
             if(controller.createRole(nRole)){
-                autoID = controller.getSize(this);
+                autoID = controller.getSize();
             }
             idField.setText(autoID+"");
             nameField.setText("");
@@ -399,7 +399,8 @@ public class RoleManagementForm extends javax.swing.JFrame {
         else if(state == STATE.EDIT && !"".equals(idField.getText()) && !"".equals(nameField.getText())){
             if(controller!=null){
                 AccessRights rights = new AccessRights(canCreate.isSelected(),canDelete.isSelected(),canEdit.isSelected(),canRead.isSelected());
-                controller.editRole(Integer.parseInt(idField.getText()),nameField.getText(),currentPosition,rights,this);
+                Role nRole = new Role(Integer.parseInt(idField.getText()),nameField.getText(),rights);
+                controller.editRole(nRole);
                 resetFields();
             }
         }
@@ -434,7 +435,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
     private void moveOneRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveOneRightActionPerformed
         // TODO add your handling code here:
         if(controller!=null){
-            if(currentPosition!=controller.getSize(this)-1){
+            if(currentPosition!=controller.getSize()-1){
                 currentPosition++;
             }
             setFieldsFromListAt(currentPosition);
@@ -454,7 +455,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
     private void moveToLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveToLastActionPerformed
         // TODO add your handling code here:
         if(controller!=null){
-            currentPosition = controller.getSize(this)-1;
+            currentPosition = controller.getSize()-1;
             currentStatus.setText(currentPosition+"");
             setFieldsFromListAt(currentPosition);
         }

@@ -37,7 +37,7 @@ public class ApprovalHandler implements Handler<Person> {
 
     @Override
     public boolean insert(Person person) throws SQLException {
-        String SQL = "INSERT INTO Approval values(?,?,?,?)";
+        String SQL = "INSERT INTO "+tableName+" values(?,?,?,?)";
         PreparedStatement ptst = conn.prepareCall(SQL);
         ptst.setString(1, person.getName());
         ptst.setString(2, person.getUserName());
@@ -60,7 +60,7 @@ public class ApprovalHandler implements Handler<Person> {
     @Override
     public int getSize() {
         try {
-            String query ="SELECT COUNT(*) FROM Approval";
+            String query ="SELECT COUNT(*) FROM "+tableName;
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
             if(rs.next()){

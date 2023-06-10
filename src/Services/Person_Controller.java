@@ -93,19 +93,14 @@ public class Person_Controller {
             throw new RuntimeException(e);
         }
     }
-	/**
-	 * 
-	 * @param index
-	 * @param comp
-	 */
-	public Person searchPerson(int index, Component comp){
+	public Person searchPerson(int index){
+
 		handler = new ApprovalHandler();
         try {
             if(handler.getSize()>0){
                 return handler.getAt(index);
 
             }else{
-                JOptionPane.showMessageDialog(null,"List is empty");
                 return null;
             }
         } catch (SQLException e) {

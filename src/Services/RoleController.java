@@ -1,12 +1,11 @@
 package Services;
 
 import Handlers.RoleRecordHandlers.RoleHandler;
-import Handlers.RoleRecordHandlers.RoleDataHandler;
-import Structure.AccessRights;
 import Structure.Interface.Handler;
 import Structure.Role;
 
 import java.awt.Component;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -19,21 +18,10 @@ import java.util.ArrayList;
 public class RoleController {
 	Handler<Role> handler;
 
-	public RoleDataHandler m_RoleHandler;
-
 	public RoleController(){
         handler = new RoleHandler();
-		m_RoleHandler = new RoleDataHandler();
 	}
 
-	public void finalize() throws Throwable {
-
-	}
-	/**
-	 * 
-	 * @param role
-	 * @param comp
-	 */
 	public boolean createRole(Role role){
 		try {
 			return handler.insert(role);
@@ -47,7 +35,11 @@ public class RoleController {
 	 * @param index
 	 */
 	public boolean delRole(int index){
-		return m_RoleHandler.deleteRole(index);
+		try {
+			return handler.deleteAt(index);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	public ArrayList<Role> getRolesFromList(){
 		RoleHandler handler = new RoleHandler();
@@ -57,35 +49,38 @@ public class RoleController {
 			throw new RuntimeException(e);
 		}
 	}
-	/**
-	 * 
-	 * @param id
-	 * @param name
-	 * @param rights
-	 * @param comp
-	 */
-	public boolean editRole(int id, String name, int index, AccessRights rights, Component comp){
-		return m_RoleHandler.updateRole(id, name, index, rights, comp);
+
+	public boolean editRole(Role role){
+		try {
+			return handler.update(role);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
-	/**
-	 * 
-	 * @param index
-	 * @param comp
-	 */
-	public Role searchRole(int index, Component comp){
-		return m_RoleHandler.searchRole(index, comp);
+	public Role searchRole(int index){
+		try {
+			if(handler.getSize()>=index+1){
+				return handler.getAt(index);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return null;
 	}
 
-	/**
-	 * 
-	 * @param name
-	 * @param comp
-	 */
-	public int searchRole(String name, Component comp){
-		return m_RoleHandler.searchRole(name, comp);
+	public int searchRole(String name){
+		try {
+			return handler.getIndexWhere(name);
+		} catch (SQLException | IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
-        public int getSize(Component comp){
-            return m_RoleHandler.getSize(comp);
-        }
+        public int getSize(){
+			try {
+				return handler.getSize();
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
 }//end Services.RoleController
