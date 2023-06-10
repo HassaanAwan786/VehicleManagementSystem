@@ -1,8 +1,11 @@
-/*
+package Views;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.backcaps.vehiclemanagement;
+
+import Services.RoleController;
+import Structure.AccessRights;
+import Structure.Role;
 
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -35,7 +38,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
     
     RoleController controller;
     /**
-     * Creates new form RoleManagementForm
+     * Creates new form Views.RoleManagementForm
      */
     public RoleManagementForm() {
         initComponents();
@@ -387,7 +390,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
             if(controller==null) controller = new RoleController();
             
             //save data and check if it is successfully saved or not
-            if(controller.createRole(nRole,this)){                
+            if(controller.createRole(nRole)){
                 autoID = controller.getSize(this);
             }
             idField.setText(autoID+"");
@@ -402,7 +405,7 @@ public class RoleManagementForm extends javax.swing.JFrame {
         }
         else if(state == STATE.DELETE && !"".equals(idField.getText()) || !"".equals(nameField.getText())){
             if(controller!=null){
-                controller.delRole(currentPosition,this);
+                controller.delRole(currentPosition);
                 resetFields();
             }
         }

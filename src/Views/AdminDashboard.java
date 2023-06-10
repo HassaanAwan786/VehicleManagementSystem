@@ -1,8 +1,7 @@
-/*
+package Views;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.backcaps.vehiclemanagement;
 
 /**
  *
@@ -11,7 +10,7 @@ package com.backcaps.vehiclemanagement;
 public class AdminDashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form AdminDashboard
+     * Creates new form Views.AdminDashboard
      */
     public AdminDashboard() {
         initComponents();

@@ -1,4 +1,7 @@
-package com.backcaps.vehiclemanagement;
+package Views;
+
+import Services.Person_Controller;
+import Structure.Person;
 
 import javax.swing.JOptionPane;
 
@@ -14,7 +17,7 @@ import javax.swing.JOptionPane;
 public class RegisterForm extends javax.swing.JFrame {
 
     /**
-     * Creates new form RegisterForm
+     * Creates new form Views.RegisterForm
      */
     Person_Controller PC = new Person_Controller();
     public RegisterForm() {
@@ -153,14 +156,14 @@ public class RegisterForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        Person pessenger = new Person();
-        pessenger.setName(NAME.getText());
-        pessenger.setUserName(USERNAME.getText());
-        pessenger.setDOB(String.valueOf(DOB.getDate()));
-        pessenger.setPassword(String.valueOf(PASSWORD.getPassword()));
-        if(!PC.available(pessenger.getUserName(),rootPane))
+        Person person = new Person();
+        person.setName(NAME.getText());
+        person.setUserName(USERNAME.getText());
+        person.setDOB(String.valueOf(DOB.getDate()));
+        person.setPassword(String.valueOf(PASSWORD.getPassword()));
+        if(PC.available(person.getUserName()) == null)
         {
-            PC.register(pessenger, rootPane); 
+            PC.register(person);
             JOptionPane.showMessageDialog(this, "Request Submitted. Wait for approval");
         }
         else

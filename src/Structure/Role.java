@@ -1,5 +1,4 @@
-package com.backcaps.vehiclemanagement;
-
+package Structure;
 
 
 /**
@@ -38,7 +37,8 @@ public class Role {
     }
 
 	public Role(){
-
+        id=0;
+        name="";
 	}
 
 	public void finalize() throws Throwable {

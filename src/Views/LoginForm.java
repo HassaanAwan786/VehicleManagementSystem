@@ -1,11 +1,12 @@
-package com.backcaps.vehiclemanagement;
-
-import java.awt.Component;
+package Views;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
+import Services.Person_Controller;
+import Structure.Person;
 
 /**
  *
@@ -20,7 +21,7 @@ public class LoginForm extends javax.swing.JFrame {
     }
 
 /**
-     * Creates new form LoginForm
+     * Creates new form Views.LoginForm
      */
         /**
      * This method is called from within the constructor to initialize the form.
@@ -127,12 +128,14 @@ public class LoginForm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String UN = UserName.getText();
         String pwd = String.valueOf(PWD.getPassword());
-        if(controller.login(UN, String.valueOf(pwd),rootPane))
+        Person loggedPerson = controller.login(UN, String.valueOf(pwd));
+
+        if(loggedPerson!=null)
         {
-            if(controller.checkRole(UN,this).equals("Manager")){
+            if(loggedPerson.getRole().equals("Manager")){
                 dispose();
                 new AdminDashboard().setVisible(true);
-            }else if(controller.checkRole(UN, this).equals("Customer")){
+            }else if(loggedPerson.getRole().equals("Customer")){
                 dispose();
                 new Reservation_form().setVisible(true);
             }
