@@ -30,16 +30,16 @@ public class Person_Controller {
     public void insertRecord(Record record) throws SQLException {
         recordHandler.insert(record);
     }
-    public DefaultTableModel getRecord()
+    public DefaultTableModel getRecord(DefaultTableModel tm)
     {
         try {
-            DefaultTableModel model = new DefaultTableModel();
             ArrayList<Record> list = recordHandler.getAll();
             for (Record record : list) {
+                System.out.println(record.getFrom());
                 Object[] object = {record.getFrom(), record.getTo(), record.getDate(), record.getDays(), record.getCarType(), record.getFare()};
-                model.addRow(object);
+                tm.addRow(object);
             }
-            return model;
+            return tm;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

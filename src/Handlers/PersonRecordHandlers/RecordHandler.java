@@ -33,9 +33,10 @@ public class RecordHandler implements Handler<Record> {
         PreparedStatement ptst = conn.prepareStatement(SQL);
         ResultSet rs = ptst.executeQuery();
         ArrayList<Record> tempList = new ArrayList<>();
-        Record tempRecord = new Record();
+        Record tempRecord;
         while(rs.next())
         {
+            tempRecord = new Record();
             tempRecord.setFrom(rs.getString("From"));
             tempRecord.setTo(rs.getString("To"));
             tempRecord.setDate(rs.getString("DATE"));

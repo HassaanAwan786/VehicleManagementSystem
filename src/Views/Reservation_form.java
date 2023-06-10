@@ -46,7 +46,6 @@ public class Reservation_form extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         DAYS = new javax.swing.JTextField();
         RideButton = new javax.swing.JButton();
-        HistoryButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         CARTYPE = new javax.swing.JComboBox<>();
         FARE = new javax.swing.JLabel();
@@ -68,6 +67,7 @@ public class Reservation_form extends javax.swing.JFrame {
 
         jLabel4.setText("DEPARTURE DATE");
 
+        RideButton.setBackground(new java.awt.Color(0, 153, 0));
         RideButton.setText("INITIATE RIDE");
         RideButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,12 +75,6 @@ public class Reservation_form extends javax.swing.JFrame {
             }
         });
 
-        HistoryButton.setText("RIDE HISTORY");
-        HistoryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HistoryButtonActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText("CAR TYPE");
 
@@ -104,26 +98,20 @@ public class Reservation_form extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addGroup(layout.createSequentialGroup()
-                                                                        .addGap(47, 47, 47)
-                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                .addComponent(jLabel2)
-                                                                                .addComponent(jLabel3)
-                                                                                .addComponent(jLabel4)
-                                                                                .addComponent(jLabel5)
-                                                                                .addComponent(jLabel6))
-                                                                        .addGap(62, 62, 62))
-                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                        .addGap(117, 117, 117)
-                                                                        .addComponent(FARE)
-                                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGap(70, 70, 70)
-                                                                .addComponent(RideButton)
-                                                                .addGap(39, 39, 39)))
+                                                                .addGap(47, 47, 47)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jLabel2)
+                                                                        .addComponent(jLabel3)
+                                                                        .addComponent(jLabel4)
+                                                                        .addComponent(jLabel5)
+                                                                        .addComponent(jLabel6))
+                                                                .addGap(62, 62, 62))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addGap(117, 117, 117)
+                                                                .addComponent(FARE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(HistoryButton)
                                                         .addComponent(CARTYPE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                 .addComponent(DATE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,9 +123,12 @@ public class Reservation_form extends javax.swing.JFrame {
                                                 .addGap(160, 160, 160)
                                                 .addComponent(logout))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGap(100, 100, 100)
+                                                .addGap(138, 138, 138)
+                                                .addComponent(RideButton))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(97, 97, 97)
                                                 .addComponent(bookText)))
-                                .addContainerGap(96, Short.MAX_VALUE))
+                                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,13 +157,11 @@ public class Reservation_form extends javax.swing.JFrame {
                                         .addComponent(CARTYPE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addComponent(FARE)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(RideButton)
-                                        .addComponent(HistoryButton))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RideButton)
+                                .addGap(24, 24, 24)
                                 .addComponent(logout)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,7 +171,7 @@ public class Reservation_form extends javax.swing.JFrame {
 
         if(FROM.getSelectedItem().toString().equals(TO.getSelectedItem().toString()))
         {
-            FARE.setText("TWO cities cannot have same cities");
+            FARE.setText("Inter city is not available");
         }
         else if(DAYS.getText().isEmpty())
         {
@@ -212,27 +201,6 @@ public class Reservation_form extends javax.swing.JFrame {
         
     }//GEN-LAST:event_RideButtonActionPerformed
 
-    private void HistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistoryButtonActionPerformed
-        JTable History = new JTable();
-        String[] columnNames = {"From", "To", "DATE", "DAYS", "CARTYPE", "FARE"};
-        JPanel panel = new JPanel();
-        JFrame frame = new JFrame();
-        frame.setLayout(new BorderLayout());
-        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-        History.setModel(model);
-        DefaultTableModel tm = (DefaultTableModel)History.getModel();
-        tm.setRowCount(0);
-        tm = pessengercontroller.getRecord();
-        TableColumn column = History.getColumnModel().getColumn(2);
-        column.setPreferredWidth(200);
-        System.out.println("Number of rows in table model: " + tm.getRowCount());
-        panel.add(History);
-        frame.add(panel, BorderLayout.CENTER);
-        frame.pack();
-        frame.setVisible(true);
-        panel.setVisible(true);
-        History.setVisible(true);
-    }//GEN-LAST:event_HistoryButtonActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
@@ -281,7 +249,6 @@ public class Reservation_form extends javax.swing.JFrame {
     private javax.swing.JTextField DAYS;
     private javax.swing.JLabel FARE;
     private javax.swing.JComboBox<String> FROM;
-    private javax.swing.JButton HistoryButton;
     private javax.swing.JButton RideButton;
     private javax.swing.JComboBox<String> TO;
     private javax.swing.JLabel bookText;

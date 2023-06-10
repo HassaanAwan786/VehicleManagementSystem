@@ -3,6 +3,13 @@ package Views;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import Services.Person_Controller;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import java.awt.*;
+
 /**
  *
  * @author MacBookPro
@@ -12,7 +19,9 @@ public class AdminDashboard extends javax.swing.JFrame {
     /**
      * Creates new form Views.AdminDashboard
      */
+    Person_Controller passengerController;
     public AdminDashboard() {
+        passengerController = new Person_Controller();
         initComponents();
     }
 
@@ -24,7 +33,7 @@ public class AdminDashboard extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        HistoryButton = new javax.swing.JButton();
         editRole = new javax.swing.JButton();
         userMGMT = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -55,38 +64,50 @@ public class AdminDashboard extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-
+        HistoryButton.setText("RIDE HISTORY");
+        HistoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HistoryButtonActionPerformed(evt);
+            }
+        });
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(editRole, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addComponent(userMGMT, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(logout)
-                .addGap(232, 232, 232))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(editRole, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                                .addComponent(userMGMT, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(59, 59, 59))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(jLabel1)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(logout)
+                                                .addGap(232, 232, 232))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(HistoryButton)
+                                                .addGap(208, 208, 208))))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(userMGMT, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editRole, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(logout)
-                .addGap(39, 39, 39))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel1)
+                                .addGap(56, 56, 56)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(userMGMT, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(editRole, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                                .addComponent(HistoryButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(logout)
+                                .addGap(39, 39, 39))
         );
 
         pack();
@@ -109,7 +130,27 @@ public class AdminDashboard extends javax.swing.JFrame {
         dispose();
         new LoginForm().setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
-
+    private void HistoryButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        JTable History = new JTable();
+        String[] columnNames = {"From", "To", "DATE", "DAYS", "CARTYPE", "FARE"};
+        JPanel panel = new JPanel();
+        JFrame frame = new JFrame();
+        frame.setLayout(new BorderLayout());
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        History.setModel(model);
+        DefaultTableModel tm = (DefaultTableModel)History.getModel();
+        tm.setRowCount(0);
+        tm = passengerController.getRecord(tm);
+        TableColumn column = History.getColumnModel().getColumn(2);
+        column.setPreferredWidth(200);
+        System.out.println("Number of rows in table model: " + tm.getRowCount());
+        panel.add(History);
+        frame.add(panel, BorderLayout.CENTER);
+        frame.pack();
+        frame.setVisible(true);
+        panel.setVisible(true);
+        History.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -147,6 +188,7 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton editRole;
+    private javax.swing.JButton HistoryButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logout;
     private javax.swing.JButton userMGMT;
