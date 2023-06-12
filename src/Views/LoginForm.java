@@ -127,8 +127,8 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String Username = UserName.getText();
-        String Password = String.valueOf(PWD.getPassword());
-        Person loggedPerson = controller.login(Username, String.valueOf(Password));
+        String password = String.valueOf(PWD.getPassword());
+        Person loggedPerson = controller.login(Username, String.valueOf(password));
 
         if(loggedPerson!=null)
         {
