@@ -8,6 +8,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 public class DriverDisplay {
+    //main frame for runing the driver module
     private JFrame frame;
     private JLabel nameLabel, cnicLabel, ageLabel, licenceTypeLabel, issuedDateLabel, expiryDateLabel;
     private JTextField nameField, cnicField, ageField, licenceTypeField, issuedDateField, expiryDateField;

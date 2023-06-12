@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class DriverDAO {
+public class DriverDAO {     //linking dataaccess object class for linking database
     private Connection connection;
 
     public DriverDAO() {

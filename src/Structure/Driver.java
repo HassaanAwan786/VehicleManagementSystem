@@ -1,6 +1,6 @@
 package Structure;
 
-public class Driver {
+public class Driver {   //basic structure of driver
     private String Name;
     private String Cnic;
     private int Age;
