@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e03e9852-2ecc-475c-ac83-83322709ecc3" name="Changes" comment="Structuring the code">
+    <list default="true" id="e03e9852-2ecc-475c-ac83-83322709ecc3" name="Changes" comment="Completed the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RecordHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RecordHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RegistrationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Handlers/PersonRecordHandlers/RegistrationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Services/Person_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Person_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structure/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structure/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structure/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/LoginForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/Reservation_form.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Reservation_form.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +44,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RunManager">
@@ -95,12 +97,20 @@
       <option name="project" value="LOCAL" />
       <updated>1686412460158</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed the project">
+      <created>1686414385393</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686414385393</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Structuring the code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Structuring the code" />
+    <MESSAGE value="Completed the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed the project" />
   </component>
 </project>
