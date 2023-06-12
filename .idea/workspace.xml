@@ -7,6 +7,9 @@
     <list default="true" id="e03e9852-2ecc-475c-ac83-83322709ecc3" name="Changes" comment="Driver_Managment_Module,Completed the project">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e03e9852-2ecc-475c-ac83-83322709ecc3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Views/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/LoginForm.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +118,27 @@
       <updated>1686551831001</updated>
     </task>
     <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00005" summary="Approval, Login, Registration, Admin features and role managment">
+      <created>1686566936790</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686566936791</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Structuring the code" />
     <MESSAGE value="Completed the project" />
+
     <MESSAGE value="Driver_Managment_Module,Completed the project" />
     <option name="LAST_COMMIT_MESSAGE" value="Driver_Managment_Module,Completed the project" />
+
+    <MESSAGE value="Approval, Login, Registration, Admin features and role managment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Approval, Login, Registration, Admin features and role managment" />
+
   </component>
 </project>
