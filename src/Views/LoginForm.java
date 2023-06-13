@@ -5,21 +5,55 @@ package Views;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import Services.Database;
 import Services.Person_Controller;
 import Structure.Person;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import static java.lang.System.exit;
 
 /**
  *
  * @author moiza
  */
-public class LoginForm extends javax.swing.JFrame {
+public class LoginForm extends javax.swing.JFrame implements ActionListener {
 
+    JMenuBar menuBar = new JMenuBar();
+    JMenu menu = new JMenu("File");
+    JMenuItem dataBaseItem = new JMenuItem("Open Database");
+    JMenuItem closeItem = new JMenuItem("Close");
     Person_Controller controller;
     public LoginForm() {
+        dataBaseItem.addActionListener(this);
+        closeItem.addActionListener(this);
+        menu.add(dataBaseItem);
+        menu.add(closeItem);
+        menu.addSeparator();
+        menuBar.add(menu);
+        this.setJMenuBar(menuBar);
         this.controller = new Person_Controller();
         initComponents();
     }
-
+    public void actionPerformed(ActionEvent e){
+        if(e.getActionCommand()=="Open Database"){
+            try {
+                Desktop.getDesktop().browse(new URL("http://localhost/phpmyadmin").toURI());
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        }else{
+            exit(0);
+        }
+    }
 /**
      * Creates new form Views.LoginForm
      */
